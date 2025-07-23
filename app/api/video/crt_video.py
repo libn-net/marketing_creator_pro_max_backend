@@ -183,14 +183,19 @@ def create_video_by_human(short_video_detail: ShortVideoDetail):
         # 使用ultralight生成数字人视频
         ultralight_service = UltralightService()
         # 公共数字人取传值human_id 否则获取 本地human_id
-        human_id = db.query(DigitalHumanAvatar).filter(DigitalHumanAvatar.id == short_video_detail.digital_human_avatars_id).first().human_id
-
+        digitalHumanAvatarObj = db.query(DigitalHumanAvatar).filter(DigitalHumanAvatar.id == short_video_detail.digital_human_avatars_id).first()
+        human_id = digitalHumanAvatarObj.human_id
+        human_type = digitalHumanAvatarObj.type
+        is_public = True
+        if human_type == 1:
+            is_public = False
         if not human_id or human_id == 'None':
             raise ValueError(f"未找到ID为{short_video_detail.digital_human_avatars_id}的数字人")
         digital_human_video_path = ultralight_service.generate_video_by_human_id(
             audio_path=voice_path,
             human_id=human_id,
-            output_path=str(digital_human_video_path)
+            output_path=str(digital_human_video_path),
+            is_public=is_public
         )
 
 

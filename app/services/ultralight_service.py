@@ -210,7 +210,7 @@ class UltralightService:
         
         return output_path
 
-    def generate_video_by_human_id(self, audio_path: str, human_id: str, output_path: str) -> Path:
+    def generate_video_by_human_id(self, audio_path: str, human_id: str, output_path: str, is_public: int) -> Path:
         """根据human_id生成视频
 
         参数:
@@ -224,7 +224,10 @@ class UltralightService:
         """
         load_dotenv()
         project_root = Path(os.getenv("PROJECT_ROOT"))
-        avatar_dir = project_root / 'data' / (Path('public') / 'avatar') / human_id
+        if is_public:
+            avatar_dir = project_root / 'data' / (Path('public') / 'avatar') / human_id
+        else:
+            avatar_dir = project_root / 'data' / 'avatar' / human_id
         checkpoint_path = avatar_dir / 'checkpoint' / 'best.pth'
 
         if not checkpoint_path.exists():
