@@ -1,3 +1,11 @@
+# 声明：该项目已合并到 open_tapnow_lovart
+# https://github.com/libn-net/open_tapnow_lovart 后续所有更新在新项目完成
+# 目前已实现云端和本地双支持的模式，更简洁，支持对外API
+# 该项目不在维护
+
+# 基友沟通，不要发广告哦（备注：数字人交流）
+<img width="1054" height="1180" alt="Image" src="https://github.com/user-attachments/assets/6af3ddf5-7a5a-43bc-8f0f-30b16fc05e40" />
+
 # Project | 项目
 #### 高颜值AI数字人克隆、声音克隆、短视频生成、直播（待发布）、AI配音、AI字幕，包括Windows安装版，Web版，H5版，小程序版，副业必备。
 AI digital human cloning with high appearance, voice cloning, short video generation, live streaming (to be released), AI dubbing, AI subtitles, including Windows installation version, Web version, H5 version, Mini Program version, perfect for side business. | 
@@ -107,10 +115,6 @@ https://github.com/libn-net/marketing_creator_pro_max_backend
 - https://github.com/star4564
 - https://github.com/WangWei974747584
 - https://github.com/huminghr
-
-## 基友&基友圈（请备注：开源数字人交流）
-<img src="./doc/wx_01.jpg" width="300" />
-<img src="./doc/wx_02.jpg" width="300" />
 
 
 ## 1 环境配置
