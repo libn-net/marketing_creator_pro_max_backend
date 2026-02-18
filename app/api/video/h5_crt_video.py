@@ -171,7 +171,10 @@ def create_video_by_human(short_video_detail: ShortVideoDetail):
         human_id = digital_human.human_id
         no_green_cover_image_height = digital_human.no_green_cover_image_height
         no_green_cover_image_width = digital_human.no_green_cover_image_width
-
+        human_type = digital_human.type
+        is_public = True
+        if human_type == 1:
+            is_public = False
 
         if not human_id or human_id == 'None':
             raise ValueError(f"未找到ID为{short_video_detail.digital_human_avatars_id}的数字人")
@@ -179,7 +182,8 @@ def create_video_by_human(short_video_detail: ShortVideoDetail):
         digital_human_video_path = ultralight_service.generate_video_by_human_id(
             audio_path=voice_path,
             human_id=human_id,
-            output_path=str(digital_human_video_path)
+            output_path=str(digital_human_video_path),
+            is_public=is_public
         )
         logger.info(f"数字人对口型视频地址: {digital_human_video_path}")
 
